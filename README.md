@@ -14,7 +14,7 @@ Java JDK版本为1.8及以上
 2、security/LLianPayAccpSignature.java 包含签名、验签、本地加密方法。<br/>
 3、client/LLianPayClient.java 发起请求方法。<br/>
 4、部分Demo需要用debug打断点方式进行调试，请自行阅读注释。<br/>
-5、部分Demo是无法直接运行的，需要在添加相应个人信息后方可运行（手机号、证件号、银行卡号等）。<br/>
+5、部分Demo是无法直接运行的，需要在代码中添加相应个人信息后方可运行（手机号、证件号、银行卡号等）。<br/>
 
 ### Demo说明（持续完善中）
 #### 开户：
@@ -28,7 +28,7 @@ Java JDK版本为1.8及以上
 * 银行卡快捷支付+交易二次短信验证：PaymentBankCardDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/payment-bankcard.html
 * 账户+收银台：CashierPayCreateDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-cashier-paycreate.html
 
-#### 提现
+#### 提现：
 * 提现申请：WithDrawalDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/withdrawal.html
 
 #### 公共API：
