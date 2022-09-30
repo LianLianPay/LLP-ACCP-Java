@@ -30,6 +30,7 @@ Java JDK版本为1.8及以上
 * 银行卡快捷支付+交易二次短信验证：PaymentBankCardDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/payment-bankcard.html
 * 账户+收银台：CashierPayCreateDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-cashier-paycreate.html
 * 支付单关单：ClosePaymentDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/close-payment.html
+* 网关类支付：PaymentGwDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/payment-gw.html
 
 #### 提现：
 * 提现申请：WithDrawalDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/withdrawal.html
@@ -40,6 +41,8 @@ Java JDK版本为1.8及以上
 * 申请密码控件Token：ApplyPasswordElementDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/apply-password-element.html
 * 电子回单生成：ReceiptProduceDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/receipt-produce.html
 * 电子回单下载：ReceiptDownloadDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/receipt-download.html
+* 协议申请：PapAgreeApplyAndModifyDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/pap-agree-apply.html
+* 协议修改：PapAgreeApplyAndModifyDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/pap-agree-modify.html
 
 #### 账户管理类：
 * 用户信息查询：QueryUserInfoDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-userinfo.html
