@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode
-public class EnterpriseOpenacctApplyParams {
+public class OpenacctApplyParams {
     private String timestamp;
     private String oid_partner;
     private String user_id;
@@ -19,19 +19,19 @@ public class EnterpriseOpenacctApplyParams {
     private String risk_item;
 
     // 开户基本信息
-    private EnterpriseOpenacctApplyBasicInfo basicInfo;
+    private OpenacctApplyBasicInfo basicInfo;
     // 开户绑卡信息
-    private EnterpriseOpenacctApplyLinkedAcctInfo linkedAcctInfo;
+    private OpenacctApplyLinkedAcctInfo linkedAcctInfo;
     // 企业法定代表人信息
-    private EnterpriseOpenacctApplyLegalreptInfo legalreptInfo;
+    private OpenacctApplyLegalreptInfo legalreptInfo;
     // 企业联系人信息
-    private EnterpriseOpenacctApplyContactsInfo contactsInfo;
+    private OpenacctApplyContactsInfo contactsInfo;
     // 企业经营信息
-    private EnterpriseOpenacctApplyBusinessInfo businessInfo;
+    private OpenacctApplyBusinessInfo businessInfo;
     // 企业基本户信息
-    private EnterpriseOpenacctApplyBasicAcctInfo basicAcctInfo;
+    private OpenacctApplyBasicAcctInfo basicAcctInfo;
     // 受益所有人信息uboInfos(可选，若传uboInfos，则按下列参数要求传)
-    private EnterpriseOpenacctApplyUboInfos uboInfos;
+    private OpenacctApplyUboInfos uboInfos;
     // 开户账户申请信息
-    private EnterpriseOpenacctApplyAccountInfo applyAccountInfo;
+    private OpenacctApplyAccountInfo applyAccountInfo;
 }

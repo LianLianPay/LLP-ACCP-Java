@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode
-public class IndividualOpenacctApplyLinkedAcctInfo {
+public class OpenacctApplyLinkedAcctInfo {
     private String linked_acctno;
     private String linked_phone;
 }

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode
-public class IndividualOpenacctApplyParams {
+public class OpenacctApplyParams {
     private String timestamp;
     private String oid_partner;
     private String user_id;
@@ -18,7 +18,7 @@ public class IndividualOpenacctApplyParams {
     private String open_sms_flag;
     private String risk_item;
 
-    private IndividualOpenacctApplyBasicInfo basicInfo;
-    private IndividualOpenacctApplyLinkedAcctInfo linkedAcctInfo;
-    private IndividualOpenacctApplyAccountInfo accountInfo;
+    private OpenacctApplyBasicInfo basicInfo;
+    private OpenacctApplyLinkedAcctInfo linkedAcctInfo;
+    private OpenacctApplyAccountInfo accountInfo;
 }

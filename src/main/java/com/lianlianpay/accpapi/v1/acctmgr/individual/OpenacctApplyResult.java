@@ -4,17 +4,16 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 个人用户开户验证 请求参数
+ * 个人用户开户申请 响应参数
  */
 @Data
 @EqualsAndHashCode
-public class IndividualOpenacctVerifyParams {
-    private String timestamp;
+public class OpenacctApplyResult {
+    private String ret_code;
+    private String ret_msg;
     private String oid_partner;
     private String user_id;
     private String txn_seqno;
+    private String accp_txno;
     private String token;
-    private String verify_code;
-    private String password;
-    private String random_key;
 }

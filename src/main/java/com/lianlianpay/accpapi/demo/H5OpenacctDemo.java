@@ -4,9 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.lianlianpay.accpapi.client.LLianPayClient;
 import com.lianlianpay.accpapi.config.LLianPayConstant;
 import com.lianlianpay.accpapi.utils.LLianPayDateUtils;
-import com.lianlianpay.accpapi.v1.acctmgr.OpenacctApplyAccountInfo;
-import com.lianlianpay.accpapi.v1.acctmgr.OpenacctApplyParams;
-import com.lianlianpay.accpapi.v1.acctmgr.OpenacctApplyResult;
+import com.lianlianpay.accpapi.v1.acctmgr.webapge.OpenacctApplyAccountInfo;
+import com.lianlianpay.accpapi.v1.acctmgr.webapge.OpenacctApplyParams;
+import com.lianlianpay.accpapi.v1.acctmgr.webapge.OpenacctApplyResult;
 
 /**
  * 用户开户申请(页面接入) Demo

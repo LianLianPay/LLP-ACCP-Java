@@ -5,7 +5,6 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode
-public class EnterpriseOpenacctApplyBasicAcctInfo {
-    private String basicacct_bankcode;
-    private String basicacct_no;
+public class OpenacctApplyAccountInfo {
+    private String account_type;
 }

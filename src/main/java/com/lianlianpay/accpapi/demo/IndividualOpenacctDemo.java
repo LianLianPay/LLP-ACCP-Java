@@ -36,7 +36,7 @@ public class IndividualOpenacctDemo {
         }
 
         // 个人开户申请
-        IndividualOpenacctApplyResult openacctApplyResult = openacctApply(lLianPayClient, userId);
+        OpenacctApplyResult openacctApplyResult = openacctApply(lLianPayClient, userId);
 
         // 随机密码因子获取接口
         // 测试环境没有接密码控件的话，可以用连连公钥进行加密调试接口
@@ -105,8 +105,8 @@ public class IndividualOpenacctDemo {
      * @param userId
      * @return
      */
-    public static IndividualOpenacctApplyResult openacctApply(LLianPayClient lianPayClient, String userId) {
-        IndividualOpenacctApplyParams params = new IndividualOpenacctApplyParams();
+    public static OpenacctApplyResult openacctApply(LLianPayClient lianPayClient, String userId) {
+        OpenacctApplyParams params = new OpenacctApplyParams();
         String timestamp = LLianPayDateUtils.getTimestamp();
         params.setTimestamp(timestamp);
         params.setOid_partner(LLianPayConstant.OidPartner);
@@ -116,7 +116,7 @@ public class IndividualOpenacctDemo {
         params.setNotify_url("https://test.lianlianpay/notify");
 
         // 设置开户基本信息
-        IndividualOpenacctApplyBasicInfo basicInfo = new IndividualOpenacctApplyBasicInfo();
+        OpenacctApplyBasicInfo basicInfo = new OpenacctApplyBasicInfo();
         // 设置手机号
         basicInfo.setReg_phone("");
         // 设置用户名称，企业用户传企业名称，个体工商户传营业执照的名称，个人用户传姓名（正式环境会进行审核的）
@@ -133,7 +133,7 @@ public class IndividualOpenacctDemo {
         params.setBasicInfo(basicInfo);
 
         // 开户账户申请信息
-        IndividualOpenacctApplyAccountInfo accountInfo = new IndividualOpenacctApplyAccountInfo();
+        OpenacctApplyAccountInfo accountInfo = new OpenacctApplyAccountInfo();
         // 个人用户建议设置成个人支付账户类型
         accountInfo.setAccount_type("PERSONAL_PAYMENT_ACCOUNT");
         accountInfo.setAccount_need_level("V3");
@@ -142,7 +142,7 @@ public class IndividualOpenacctDemo {
         // 测试环境URL
         String url = "https://accpapi-ste.lianlianpay-inc.com/v1/acctmgr/openacct-apply-individual";
         String resultJsonStr = lianPayClient.sendRequest(url, JSON.toJSONString(params));
-        IndividualOpenacctApplyResult openacctApplyResult = JSON.parseObject(resultJsonStr, IndividualOpenacctApplyResult.class);
+        OpenacctApplyResult openacctApplyResult = JSON.parseObject(resultJsonStr, OpenacctApplyResult.class);
         System.out.println(openacctApplyResult);
         return openacctApplyResult;
     }
@@ -155,8 +155,8 @@ public class IndividualOpenacctDemo {
      * @param verifyCode
      * @param password
      */
-    public static void openacctVerify(LLianPayClient lianPayClient, IndividualOpenacctApplyResult openacctApplyResult, String verifyCode, String password) {
-        IndividualOpenacctVerifyParams params = new IndividualOpenacctVerifyParams();
+    public static void openacctVerify(LLianPayClient lianPayClient, OpenacctApplyResult openacctApplyResult, String verifyCode, String password) {
+        OpenacctVerifyParams params = new OpenacctVerifyParams();
         String timestamp = LLianPayDateUtils.getTimestamp();
         params.setTimestamp(timestamp);
         params.setOid_partner(LLianPayConstant.OidPartner);
@@ -170,7 +170,7 @@ public class IndividualOpenacctDemo {
         // 测试环境URL
         String url = "https://accpapi-ste.lianlianpay-inc.com/v1/acctmgr/openacct-verify-individual";
         String resultJsonStr = lianPayClient.sendRequest(url, JSON.toJSONString(params));
-        IndividualOpenacctVerifyResult openacctVerifyResult = JSON.parseObject(resultJsonStr, IndividualOpenacctVerifyResult.class);
+        OpenacctVerifyResult openacctVerifyResult = JSON.parseObject(resultJsonStr, OpenacctVerifyResult.class);
         System.out.println(openacctVerifyResult);
     }
 }

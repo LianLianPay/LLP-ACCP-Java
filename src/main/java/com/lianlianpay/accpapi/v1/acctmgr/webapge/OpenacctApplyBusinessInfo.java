@@ -1,14 +1,14 @@
-package com.lianlianpay.accpapi.v1.acctmgr.enterprise;
+package com.lianlianpay.accpapi.v1.acctmgr.webapge;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode
-public class EnterpriseOpenacctApplyBusinessInfo {
+public class OpenacctApplyBusinessInfo {
     private String scale;
     private String industry_code;
+    private String user_name;
     private String registered_capital;
     private String business_scope;
-    private String open_permit;
 }

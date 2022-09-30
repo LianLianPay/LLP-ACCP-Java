@@ -1,4 +1,4 @@
-package com.lianlianpay.accpapi.v1.acctmgr;
+package com.lianlianpay.accpapi.v1.acctmgr.webapge;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package com.lianlianpay.accpapi.v1.acctmgr;
+package com.lianlianpay.accpapi.v1.acctmgr.individual;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,7 +11,11 @@ public class OpenacctApplyBasicInfo {
     private String id_type;
     private String id_no;
     private String id_exp;
-    private String reg_email;
+    private String id_std;
+    private String id_authority;
+    private String area_code;
     private String address;
     private String occupation;
+    private String id_emblem;
+    private String id_portrait;
 }

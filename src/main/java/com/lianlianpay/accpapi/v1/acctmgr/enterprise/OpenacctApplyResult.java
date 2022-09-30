@@ -1,14 +1,14 @@
-package com.lianlianpay.accpapi.v1.acctmgr.individual;
+package com.lianlianpay.accpapi.v1.acctmgr.enterprise;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 个人用户开户验证 响应参数
+ * 企业用户开户申请 响应参数
  */
 @Data
 @EqualsAndHashCode
-public class IndividualOpenacctVerifyResult {
+public class OpenacctApplyResult {
     private String ret_code;
     private String ret_msg;
     private String oid_partner;
@@ -16,6 +16,7 @@ public class IndividualOpenacctVerifyResult {
     private String txn_seqno;
     private String accp_txno;
     private String oid_userno;
+    private String token;
     /*
     用户状态。
     ACTIVATE_PENDING :已登记或开户失败（原待激活）

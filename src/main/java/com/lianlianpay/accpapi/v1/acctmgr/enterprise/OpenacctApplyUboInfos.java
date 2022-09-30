@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode
-public class EnterpriseOpenacctApplyUboInfos {
+public class OpenacctApplyUboInfos {
     private String ubo_name;
     private String ubo_name_en;
     private String ubo_phone;
