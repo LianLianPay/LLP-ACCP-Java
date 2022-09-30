@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 文件上传 请求参数
+ * 文件上传 响应参数
  */
 @Data
 @EqualsAndHashCode

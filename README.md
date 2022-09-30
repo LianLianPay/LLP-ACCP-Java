@@ -38,6 +38,8 @@ Java JDK版本为1.8及以上
 * 随机因子获取：GetRandomDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/get-random.html
 * 大额行号查询：QueryCnapsCodeDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-cnapscode.html
 * 申请密码控件Token：ApplyPasswordElementDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/apply-password-element.html
+* 电子回单生成：ReceiptProduceDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/receipt-produce.html
+* 电子回单下载：ReceiptDownloadDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/receipt-download.html
 
 #### 账户管理类：
 * 用户信息查询：QueryUserInfoDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-userinfo.html
