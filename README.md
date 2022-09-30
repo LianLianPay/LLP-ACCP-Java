@@ -21,18 +21,22 @@ Java JDK版本为1.8及以上
 * 页面开户：H5OpenacctDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/openacct-apply.html
 * 个人开户流程：IndividualOpenacctDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-openacct-flow.html
 * 个人新增绑卡申请/验证：IndividualBindCardDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/individual-bindcard-apply.html
+* 个人用户信息修改：IndividualModifyUserInfoDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/modify-userinfo-individual.html
 
 #### 充值消费类：
 * 统一支付创单：TradeCreateDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-tradecreate.html
 * 余额支付+交易二次短信验证：PaymentBalanceDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/payment-balance.html
 * 银行卡快捷支付+交易二次短信验证：PaymentBankCardDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/payment-bankcard.html
 * 账户+收银台：CashierPayCreateDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-cashier-paycreate.html
+* 支付单关单：ClosePaymentDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/close-payment.html
 
 #### 提现：
 * 提现申请：WithDrawalDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/withdrawal.html
 
 #### 公共API：
 * 随机因子获取：GetRandomDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/get-random.html
+* 大额行号查询：QueryCnapsCodeDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-cnapscode.html
+* 申请密码控件Token：ApplyPasswordElementDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/apply-password-element.html
 
 #### 账户管理类：
 * 用户信息查询：QueryUserInfoDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-userinfo.html
