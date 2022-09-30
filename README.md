@@ -35,6 +35,9 @@ Java JDK版本为1.8及以上
 #### 提现：
 * 提现申请：WithDrawalDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/withdrawal.html
 
+#### 担保交易：
+* 担保确认：SecuredConfirmDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/secured-confirm.html
+
 #### 公共API：
 * 随机因子获取：GetRandomDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/get-random.html
 * 大额行号查询：QueryCnapsCodeDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-cnapscode.html

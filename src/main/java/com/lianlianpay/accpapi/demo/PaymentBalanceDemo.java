@@ -11,8 +11,37 @@ import com.lianlianpay.accpapi.v1.txn.*;
  */
 public class PaymentBalanceDemo {
     public static void main(String[] args) {
+        generalConsumePay();
+    }
+
+    /**
+     * 普通消费场景的余额支付
+     */
+    public static TradeCreateResult securedConsumePay() {
+        // 调用统一支付创单接口进行创单
+        TradeCreateResult tradeCreateResult = TradeCreateDemo.securedConsume();
+        // 使用余额方式完成支付
+        pay(tradeCreateResult);
+
+        return tradeCreateResult;
+    }
+
+    /**
+     * 普通消费场景的余额支付
+     */
+    public static void generalConsumePay() {
         // 调用统一支付创单接口进行创单
         TradeCreateResult tradeCreateResult = TradeCreateDemo.generalConsume();
+        // 使用余额方式完成支付
+        pay(tradeCreateResult);
+    }
+
+    /**
+     * 余额支付
+     *
+     * @param tradeCreateResult
+     */
+    public static void pay(TradeCreateResult tradeCreateResult) {
         // 使用余额方式完成支付
         PaymentBalanceParams params = new PaymentBalanceParams();
         String timestamp = LLianPayDateUtils.getTimestamp();

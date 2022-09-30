@@ -108,4 +108,43 @@ public class TradeCreateDemo {
         System.out.println(tradeCreateResult);
         return tradeCreateResult;
     }
+
+    /**
+     * 担保消费
+     */
+    public static TradeCreateResult securedConsume() {
+        TradeCreateParams params = new TradeCreateParams();
+        String timestamp = LLianPayDateUtils.getTimestamp();
+        params.setTimestamp(timestamp);
+        params.setOid_partner(LLianPayConstant.OidPartner);
+        // 普通消费
+        params.setTxn_type("SECURED_CONSUME");
+        params.setUser_id("LLianPayTest-In-User-12345");
+        /*
+        用户类型。默认：注册用户。
+        注册用户：REGISTERED
+        匿名用户：ANONYMOUS
+         */
+        params.setUser_type("REGISTERED");
+        params.setNotify_url("https://test.lianlianpay/notify");
+        params.setReturn_url("https://open.lianlianpay.com?jump=page");
+
+        // 设置商户订单信息
+        TradeCreateOrderInfo orderInfo = new TradeCreateOrderInfo();
+        orderInfo.setTxn_seqno("LLianPayTest" + timestamp);
+        orderInfo.setTxn_time(timestamp);
+        orderInfo.setTotal_amount(50.00);
+        orderInfo.setGoods_name("西瓜");
+        params.setOrderInfo(orderInfo);
+
+        // 担保交易可以先不指定收款方信息
+
+        // 测试环境URL
+        String url = "https://accpapi-ste.lianlianpay-inc.com/v1/txn/tradecreate";
+        LLianPayClient lLianPayClient = new LLianPayClient();
+        String resultJsonStr = lLianPayClient.sendRequest(url, JSON.toJSONString(params));
+        TradeCreateResult tradeCreateResult = JSON.parseObject(resultJsonStr, TradeCreateResult.class);
+        System.out.println(tradeCreateResult);
+        return tradeCreateResult;
+    }
 }
