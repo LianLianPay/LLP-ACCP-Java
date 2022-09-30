@@ -22,6 +22,7 @@ Java JDK版本为1.8及以上
 * 个人开户流程：IndividualOpenacctDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-openacct-flow.html
 * 个人新增绑卡申请/验证：IndividualBindCardDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/individual-bindcard-apply.html
 * 个人用户信息修改：IndividualModifyUserInfoDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/modify-userinfo-individual.html
+* 文件上传：DocumentsUploadDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/upload.html
 
 #### 充值消费类：
 * 统一支付创单：TradeCreateDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-tradecreate.html
