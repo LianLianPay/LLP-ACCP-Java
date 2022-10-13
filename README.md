@@ -31,6 +31,7 @@ Java JDK版本为1.8及以上
 * 账户+收银台：CashierPayCreateDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/accp-cashier-paycreate.html
 * 支付单关单：ClosePaymentDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/close-payment.html
 * 网关类支付：PaymentGwDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/payment-gw.html
+* 虚拟卡申请：VirtualNoApplyDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/virtualno-apply.html
 
 #### 提现：
 * 提现申请：WithDrawalDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/withdrawal.html
