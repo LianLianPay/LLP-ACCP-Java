@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html  xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>连连账户+收银台中间页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <h1>连连账户+收银台中间页</h1>
+    <p>原理：请求连连收银台，会通过refer校验来源域名，所以需要通过增加一个中间页，把refer信息带过来</p>
+    <p th:text="'跳转到的gateway_url为：' + ${gateway_url}"></p>
+    <form th:action="${gateway_url}" method="post">
+        <input type="submit" value="去收银台支付"/>
+    </form>
+</body>
+</html>

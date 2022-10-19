@@ -15,6 +15,7 @@ Java JDK版本为1.8及以上
 3、client/LLianPayClient.java 发起请求方法。<br/>
 4、部分Demo需要用debug打断点方式进行调试，请自行阅读注释。<br/>
 5、部分Demo是无法直接运行的，需要在代码中添加相应个人信息后方可运行（手机号、证件号、银行卡号等）。<br/>
+6、如果要参考调试收银台、密码控件，需要先启动server（运行这个LLPWebApplication.java），浏览器输入：http://localhost:8081/即可看到功能页
 
 ### Demo说明（持续完善中）
 #### 开户：
@@ -53,7 +54,14 @@ Java JDK版本为1.8及以上
 * 资金流水列表查询：QueryAcctserialDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-acctserial.html
 * 资金流水详情查询：QueryAcctserialDetailDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-acctserialdetail.html
 
+#### 收银台使用：
+* 收银台要前后端配合使用，前端：accp-cashier.html，后端：AccpCashierController.java
 
+#### 密码控件：
+* 密码控件需要前后端配合使用，后端：PasswordControlController.java
+* H5非国密最新：h5-non-national-pawword-control.html
+* H5密码控件（弹框）：h5-bullet-frame-password-control.html
+* PCH5最新：pch5-password-control.html
 
 
 

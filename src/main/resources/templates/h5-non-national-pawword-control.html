@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码控件-H5非国密最新</title>
+    <script src="https://mpay-static.oss-cn-hangzhou.aliyuncs.com/html/js/jquery-3.1.1.min.js"></script>
+    <script src="https://mpay-static.oss-cn-hangzhou.aliyuncs.com/html/lib/microdone/index.js"></script>
+    <script src="https://mpay-static.oss-cn-hangzhou.aliyuncs.com/html/lib/pass-guard-ctrl/crypto-js.js"></script>
+    <script src="https://mpay-static.oss-cn-hangzhou.aliyuncs.com/html/lib/pass-guard-ctrl/index.js"></script>
+    <link rel="stylesheet" href="https://mpay-static.oss-cn-hangzhou.aliyuncs.com/html/lib/microdone/microdone.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .c-password-input-box {
+            height: 200px;
+            border: 1px solid transparent;
+            margin: 7px;
+        }
+
+        .again-password {
+            margin-top: 10px;
+        }
+
+        #submit {
+            padding: 9px 10px;
+            margin: 12px;
+            width: 86%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background: #0e59f0;
+            color: #fff;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <p>密码控件使用说明：</p>
+    <p>1、建议先单独调试我们的提供的Demo，调试完毕后再集成到贵司的系统中</p>
+    <p>2、调试时，建议使用chrome浏览器，打开浏览器开发者工具，因为加密后的密文会打印再浏览器开发者工具的Console中</p>
+    <p>3、这个demo只是主要是演示密码控件的一些方法如何使用，具体的功能，如何去获取用户输入密码后加密生成的密文，然后把这个密文提供给后端API接口使用，random这个变量要从后端的“随机因子获取”接口中获取</p>
+    <p>4、点击“确认”按钮，实现的功能是输出输入密文的hash值，可以使用这个hash值判断用户输入的两次密码是否相同</p>
+    <p>5、点击“清除密码”按钮，实现的功能是清除密码输入框的内容</p>
+    <p>6、点击“获取密码”按钮，实现的功能是获取真正后端需要的加密后的密文</p>
+    <p>7、获取到的密文和random_key是有关系的（加密时用到了random_key，所以需要传给后端解密，它们是配对的），需要把这两个值都一起传递给后端，而且这两个值都是一次性的，一次性的意思就是，当后端接口使用过这两个值，那就不能再使用了，需要重新使用“随机因子获取”接口获取前端需要的random变量，然后重新生成密文，如果random一直没有被使用，有效期为10分钟</p>
+    <p></p>
+</div><br/><br/><br/>
+
+
+<div class="c-password-input-box">
+    <div>
+        新&nbsp;密&nbsp;码：
+        <input id="password-keyboard" class="default" placeholder="请输入新密码" />
+    </div>
+
+    <div class="again-password">
+        确认密码：
+        <input id="password-keyboard-again" class="default" placeholder="请输入确认密码" />
+    </div>
+    <button id="submit">确定</button>
+    <button id="reset">清除密码</button>
+    <button id="getValue">获取密码</button>
+</div>
+<script th:inline="javascript">
+    function initMicroDone(props) {
+        const svgPath = 'https://mpay-static.oss-cn-hangzhou.aliyuncs.com/html/lib/microdone/svg' // svg图片的地址
+        const {
+            guardName,
+            random
+        } = props
+        if (typeof window.kb === 'undefined') {
+            // 键盘构造
+            window.kb = new window.keyBoard({
+                chaosMode: 0, // 混乱模式,0:无混乱;1:打开时乱一次;2:每输入一个字符乱一次,默认值0
+                pressStatus: 1, // 按键状态,0:按下、抬起按键无变化;1:按下、抬起按键的颜色变化,默认值0
+                kbType: 0, // 键盘类型,0:全键盘;1:纯数字键盘,默认值0
+                svg: svgPath,
+                hasMap: '1', // 是否调用mapping值：当为1时调用，当为非1时，不调用
+                license: random.license
+            })
+        }
+        try {
+            if ($("#testkbid")[0] === undefined) {
+                window.kb.generate()
+            }
+        } catch (e) {
+            console.log(e)
+        }
+        window.passGuard.ib = random.map_arr
+        console.log(window[guardName]);
+        if (typeof window[guardName] === 'undefined') {
+            // 密码卫士构造
+            window[guardName] = new window.passGuard({
+                jump: 1,
+                fixed: 'H5fixed', // 当fixed接口添加时，代表该输入框在fixed覆盖层上且覆盖层的ID为接口的值(在demo中覆盖层ID为"H5fixed")
+                maxLength: 12, // 最大输入长度
+                regExp1: '[\\S\\s]', // 输入过程限制的正则
+                regExp2: '[\\S\\s]{6,12}',
+                displayMode: 0, // 显示形式,0:星号;1:明文,默认值0
+                callBack: () => {}, // 成功回调
+                errorCallBack: () => {}, // 失败回调
+                focus: () => {}, // H5键盘获取焦点回调
+                blur: () => {}, // H5键盘失去焦点回调
+                add: () => {},
+                del: () => {},
+                rsaPublicKey: random.rsa_public_content,
+            })
+            console.log(window[guardName]);
+        }
+        return window[guardName]
+    }
+
+    function getValue(guard) {
+        return new Promise((resolve, reject) => {
+            if (guard.getLength() === 0) {
+                reject('EMPTY')
+            }
+            if (guard.getValid() === 1) {
+                return reject('FORMAT_ERROR')
+            }
+            // ib is cleared after passGuardKeyboard.getOutput(), thus needs to be reassigned
+            const password = guard.getOutput()
+            guard.clearpwd()
+            window.passGuard.ib = random.map_arr
+            resolve(password)
+        })
+    }
+
+    // random需要从后端获取，random有效期10分钟，生成密文后传输给后端接口使用后，random要重新获取。
+    const random = JSON.parse([[${randomValue}]]);
+
+    const microDone = initMicroDone({
+        inputId: 'password-keyboard',
+        guardName: 'passGuardKeyboard',
+        random
+    })
+    microDone.generate('password-keyboard', window.kb, 'passGuardKeyboard', 0) // 密码卫士初始化
+    microDone.setRandKey(random.random_value) // 设置随机因子
+
+    const microDone1 = initMicroDone({
+        inputId: 'password-keyboard-again',
+        guardName: 'passGuardKeyboard1',
+        random,
+    })
+    console.log(microDone1);
+    microDone1.generate('password-keyboard-again', window.kb, 'passGuardKeyboard1', 0) // 密码卫士初始化
+    microDone1.setRandKey(random.random_value) // 设置随机因子
+
+    document.getElementById("submit").onclick = function () {
+        console.log(window.passGuardKeyboard.getHash())
+        console.log(window.passGuardKeyboard1.getHash())
+    }
+
+    document.getElementById("reset").onclick = function () {
+        microDone.clearpwd()
+        microDone1.clearpwd()
+    }
+
+    document.getElementById("getValue").onclick = function () {
+        getValue(microDone).then(password => {
+            console.log('获取密码成功，密码是：', password);
+            console.log('和获取密码配对使用的random_key是：', random.random_key);
+        }).catch(code => {
+            // code EMPTY-input值为空 FORMAT_ERROR-密码格式校验不正确
+            console.log('获取密码失败', code);
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>连连账户+功能测试首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div style="margin:0px auto">
+    <h1>连连账户+功能测试首页</h1>
+    <!-- 请求AccpCashierController.java 请求账户+收银台接口，获取gateway_url，跳转到accp-cashier.html -->
+    <a href="#" th:href="@{/cashier/go-pay}" target="_blank">连连账户+收银台</a><br/>
+    <a href="#" th:href="@{/password/h5-non-national}" target="_blank">密码控件-H5非国密最新</a><br/>
+    <a href="#" th:href="@{/password/h5-bullet-frame}" target="_blank">密码控件-H5密码控件（弹框）</a><br/>
+    <a href="#" th:href="@{/password/pch5}" target="_blank">密码控件-PCH5最新</a><br/>
+</div>
+</body>
+</html>
