@@ -63,6 +63,9 @@ Java JDK版本为1.8及以上
 * H5密码控件（弹框）：h5-bullet-frame-password-control.html
 * PCH5最新：pch5-password-control.html
 
+#### 异步通知：
+* 异步通知接收，验签相关：NotifyController.java
+
 
 
 
