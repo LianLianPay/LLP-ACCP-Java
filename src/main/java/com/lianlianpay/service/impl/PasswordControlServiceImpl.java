@@ -33,7 +33,7 @@ public class PasswordControlServiceImpl implements PasswordControlService {
         params.setPkg_name("test");
         // 测试环境都传test，正式环境传真实域名/应用名
         params.setApp_name("test");
-        params.setEncrypt_algorithm("RSA");
+        params.setEncrypt_algorithm("PCH5".equalsIgnoreCase(flagChnl) ? "SM2" : "RSA");
 
         LLianPayClient lLianPayClient = new LLianPayClient();
         // 测试环境URL
