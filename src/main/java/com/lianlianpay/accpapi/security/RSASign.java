@@ -2,8 +2,6 @@ package com.lianlianpay.accpapi.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 import javax.crypto.Cipher;
 import java.nio.charset.StandardCharsets;
@@ -88,8 +86,7 @@ public class RSASign {
      */
     public String encrypt(String source, String public_key) throws Exception {
 
-        BASE64Decoder b64d = new BASE64Decoder();
-        byte[] keyByte = b64d.decodeBuffer(public_key);
+        byte[] keyByte = org.apache.commons.codec.binary.Base64.decodeBase64(public_key);
         X509EncodedKeySpec x509ek = new X509EncodedKeySpec(keyByte);
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");
         PublicKey publicKey = keyFactory.generatePublic(x509ek);
@@ -98,8 +95,7 @@ public class RSASign {
         cipher.init(Cipher.ENCRYPT_MODE, publicKey);
         byte[] sbt = source.getBytes(StandardCharsets.UTF_8); // //本地测试可以使用这个
         byte[] epByte = cipher.doFinal(sbt);
-        BASE64Encoder encoder = new BASE64Encoder();
-        String epStr = encoder.encode(epByte);
+        String epStr = org.apache.commons.codec.binary.Base64.encodeBase64String(epByte);
         return epStr;
     }
 }
