@@ -30,6 +30,7 @@ Java JDK版本为1.8及以上
 * 匿名用户解绑银行卡：UnLinkedAcctIndApplyDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/unlinkedacct-ind-apply-V2.html
 * 销户申请：CancelApplyDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/cancel-apply.html
 * 找回密码申请&验证：FindPasswordDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/find-password-apply.html
+* 绑卡信息查询：QueryLinkedAcctDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-linkedacct.html
 * 用户信息查询：QueryUserInfoDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-userinfo.html
 * 资金流水列表查询：QueryAcctserialDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-acctserial.html
 * 资金流水详情查询：QueryAcctserialDetailDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/query-acctserialdetail.html
@@ -49,6 +50,7 @@ Java JDK版本为1.8及以上
 
 #### 担保交易：
 * 担保确认：SecuredConfirmDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/secured-confirm.html
+* 担保撤销：CancelSecuredPaymentDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/cancel-secured-payment.html
 
 #### 退款：
 * 退款申请：MorePayeeRefundDemo.java https://open.lianlianpay.com/docs/accp/accpstandard/more-payee-refund.html
