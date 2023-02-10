@@ -17,7 +17,6 @@ public class WithDrawalDemo {
         params.setTimestamp(timestamp);
         params.setOid_partner(LLianPayConstant.OidPartner);
         params.setNotify_url("https://test.lianlianpay/notify");
-        params.setRisk_item("");
         params.setLinked_agrtno("2022081900364011");
 
         // 设置商户订单信息
@@ -35,6 +34,7 @@ public class WithDrawalDemo {
         // 用户：LLianPayTest-In-User-12345 密码：qwerty，本地测试环境测试，没接入密码控件，使用本地加密方法加密密码（仅限测试环境使用）
         payerInfo.setPassword(LLianPayAccpSignature.getInstance().localEncrypt("qwerty"));
         params.setPayerInfo(payerInfo);
+        params.setRisk_item("{\"frms_ware_category\":\"4007\",\"goods_name\":\"测试商品\",\"user_info_mercht_userno\":\"" + payerInfo.getPayer_id() + "\",\"user_info_dt_register\":\"20220823101239\",\"user_info_bind_phone\":\"13308123456\",\"user_info_full_name\":\"连连测试\",\"user_info_id_no\":\"123456789012345678\",\"user_info_identify_state\":\"0\",\"user_info_identify_type\":\"4\",\"user_info_id_type\":\"0\",\"frms_client_chnl\":\" 16\",\"frms_ip_addr\":\"127.0.0.1\",\"user_auth_flag\":\"1\"}");
 
         // 测试环境URL
         String url = "https://accpapi-ste.lianlianpay-inc.com/v1/txn/withdrawal";
