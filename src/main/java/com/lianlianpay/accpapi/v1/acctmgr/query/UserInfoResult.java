@@ -13,6 +13,7 @@ public class UserInfoResult {
     private String ret_msg;
     private String oid_partner;
     private String user_id;
+    private String user_name;
     private String oid_userno;
     /*
     用户状态。

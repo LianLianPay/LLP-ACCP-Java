@@ -13,6 +13,7 @@ public class OpenacctApplyResult {
     private String ret_msg;
     private String oid_partner;
     private String user_id;
+    private String user_name;
     private String txn_seqno;
     private String accp_txno;
     private String token;

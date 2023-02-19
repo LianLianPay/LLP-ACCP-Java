@@ -8,7 +8,7 @@ import com.lianlianpay.accpapi.v1.acctmgr.query.UserInfoParams;
 import com.lianlianpay.accpapi.v1.acctmgr.query.UserInfoResult;
 
 /**
- * 资金流水列表查询 Demo
+ * 用户信息查询 Demo
  */
 public class QueryUserInfoDemo {
     public static void main(String[] args) {
