@@ -46,6 +46,12 @@ public class H5OpenacctDemo {
         INNERCOMPANY：企业用户
          */
         params.setUser_type("INNERCOMPANY");
+        /*
+        开户类型。
+        OpenActivatedUser：待激活开户
+        OpenNormalUser：正常开户，默认为正常开户
+         */
+        params.setCust_trade_serial_type("OpenNormalUser");
 
         // 设置开户账户申请信息
         OpenacctApplyAccountInfo accountInfo = new OpenacctApplyAccountInfo();
@@ -94,6 +100,12 @@ public class H5OpenacctDemo {
         INNERCOMPANY：企业用户
          */
         params.setUser_type("INNERUSER");
+        /*
+        开户类型。
+        OpenActivatedUser：待激活开户
+        OpenNormalUser：正常开户，默认为正常开户
+         */
+        params.setCust_trade_serial_type("OpenActivatedUser");
 
         // 设置开户账户申请信息
         OpenacctApplyAccountInfo accountInfo = new OpenacctApplyAccountInfo();

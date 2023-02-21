@@ -18,6 +18,7 @@ public class OpenacctApplyParams {
     private String return_url;
     private String notify_url;
     private String user_type;
+    private String cust_trade_serial_type;
 
     // 开户基本信息
     private OpenacctApplyBasicInfo basicInfo;
