@@ -19,7 +19,7 @@ public class PaymentPapayDemo {
         params.setTxn_type("GENERAL_CONSUME");
         params.setUser_id("LLianPayTest-In-User-12345");
         params.setClient_ip("127.0.0.1");
-        params.setRisk_item("{\"frms_ware_category\":\"4007\",\"goods_name\":\"测试商品\",\"user_info_mercht_userno\":\"" + params.getUser_id() + "\",\"user_info_dt_register\":\"20220823101239\",\"user_info_bind_phone\":\"13308123456\",\"user_info_full_name\":\"连连测试\",\"user_info_id_no\":\"123456789012345678\",\"user_info_identify_state\":\"0\",\"user_info_identify_type\":\"4\",\"user_info_id_type\":\"0\",\"frms_client_chnl\":\" 16\",\"frms_ip_addr\":\"127.0.0.1\",\"user_auth_flag\":\"1\"}");
+        params.setRisk_item("{\"frms_ware_category\":\"4007\",\"goods_name\":\"测试商品\",\"user_info_mercht_userno\":\"" + params.getUser_id() + "\",\"user_info_dt_register\":\"20220823101239\",\"user_info_bind_phone\":\"用户真实手机号（乱传影响交易）\",\"user_info_full_name\":\"连连测试\",\"user_info_id_no\":\"123456789012345678\",\"user_info_identify_state\":\"0\",\"user_info_identify_type\":\"4\",\"user_info_id_type\":\"0\",\"frms_client_chnl\":\" 16\",\"frms_ip_addr\":\"127.0.0.1\",\"user_auth_flag\":\"1\"}");
 
         PaymentPapayOrderInfo orderInfo = new PaymentPapayOrderInfo();
         orderInfo.setTxn_seqno("LLianPayTest" + timestamp);
