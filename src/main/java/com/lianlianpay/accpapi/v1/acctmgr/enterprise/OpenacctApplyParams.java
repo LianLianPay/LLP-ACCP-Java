@@ -33,5 +33,5 @@ public class OpenacctApplyParams {
     // 受益所有人信息uboInfos(可选，若传uboInfos，则按下列参数要求传)
     private OpenacctApplyUboInfos uboInfos;
     // 开户账户申请信息
-    private OpenacctApplyAccountInfo applyAccountInfo;
+    private OpenacctApplyAccountInfo accountInfo;
 }
